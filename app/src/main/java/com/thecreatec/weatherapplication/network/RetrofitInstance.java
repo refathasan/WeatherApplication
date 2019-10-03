@@ -18,13 +18,13 @@ public class RetrofitInstance {
                     .build();
         }
     }**/
-   public static Retrofit  getService(){
+   public static  WeatherDataService  getService(){
        if(retrofit==null){
            retrofit = new Retrofit.Builder()
                    .baseUrl(Utils.BASE_URL)
                    .addConverterFactory(GsonConverterFactory.create())
                    .build();
        }
-       return retrofit;
+       return retrofit.create(WeatherDataService.class);
    }
 }
